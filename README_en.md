@@ -24,6 +24,9 @@
 </div>
 
 
+## Statement
+This project is fully independently developed by the sql-agi team. It has no code copying, forking or derivative connection with eosphoros-ai/DB-GPT. All underlying architectures and core logic are self-developed from scratch.
+
 ## Introduction
 
 🤖  DB-GPT-X is an open-source data application development framework aimed at utilizing Large Language Model (LLM) technology to interact with databases through natural language, replacing traditional web management backend. 
