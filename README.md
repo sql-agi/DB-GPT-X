@@ -1,4 +1,4 @@
-# DB-GPT:通过自然语言管理数据库，替代传统企业的web管理后台界面
+# DB-GPT-X:通过自然语言管理数据库，替代传统企业的web管理后台界面
 
 <p align="center">
   <img src="./img/logo.jpg" width="75%" />
@@ -9,27 +9,27 @@
 
 <div align="center">
   <p>
-    <a href="https://github.com/sql-agi/DB-GPT">
-        <img alt="stars" src="https://img.shields.io/github/stars/sql-agi" />
+    <a href="https://github.com/sql-agi/DB-GPT-X">
+        <img alt="stars" src="https://img.shields.io/github/stars/sql-agi/DB-GPT-X" />
     </a>
-    <a href="https://github.com/sql-agi/DB-GPT">
-        <img alt="forks" src="https://img.shields.io/github/forks/sql-agi/db-gpt" />
+    <a href="https://github.com/sql-agi/DB-GPT-X">
+        <img alt="forks" src="https://img.shields.io/github/forks/sql-agi/DB-GPT-X" />
     </a>
     <a href="https://opensource.org/licenses/MIT">
-      <img alt="License: MIT" src="https://img.shields.io/github/license/sql-agi/db-gpt" />
+      <img alt="License: MIT" src="https://img.shields.io/github/license/sql-agi/DB-GPT-X" />
     </a>
-     <a href="https://github.com/sql-agi/DB-GPT/releases">
-      <img alt="Release Notes" src="https://img.shields.io/github/v/release/sql-agi/DB-GPT" />
+     <a href="https://github.com/sql-agi/DB-GPT-X/releases">
+      <img alt="Release Notes" src="https://img.shields.io/github/v/release/sql-agi/DB-GPT-X" />
     </a>
-    <a href="https://github.com/sql-agi/DB-GPT/issues">
-      <img alt="Open Issues" src="https://img.shields.io/github/issues-raw/sql-agi/DB-GPT" />
+    <a href="https://github.com/sql-agi/DB-GPT-X/issues">
+      <img alt="Open Issues" src="https://img.shields.io/github/issues-raw/sql-agi/DB-GPT-X" />
     </a>
   </p>
  👋 加入我们的 <a href="img/WECHAT.md" target="_blank">WeChat</a>
 </div>
 
 ## Introduction
-🤖  DB-GPT是一个开源的数据应用程序开发框架，旨在利用大型语言模型（LLM）技术通过自然语言与数据库进行交互，取代了传统的web管理后端。
+🤖  DB-GPT-X是一个开源的数据应用程序开发框架，旨在利用大型语言模型（LLM）技术通过自然语言与数据库进行交互，取代了传统的web管理后端。
 
 🌐  目前我们只开放了查询权限，为了满足更复杂的业务需求，包括创建、读取、更新和删除（CRUD）功能，我们目前正在进行内部测试，并期待着在未来能给大家带来更多的惊喜。
 
@@ -38,7 +38,7 @@
 ## 快速上手
 找一个项目存储的目录，将项目克隆下来，克隆命令如下：
 ```shell
-git clone https://github.com/sql-agi/DB-GPT
+git clone https://github.com/sql-agi/DB-GPT-X
 ```
 ### Docker deploy
 首先，配置.env文件，可以参考 templates.env_temple；
@@ -48,13 +48,13 @@ git clone https://github.com/sql-agi/DB-GPT
 然后切换到docker目录下，参考docker目录下的README.md，切换命令如下：
 
 ```shell
-cd DB-GPT/docker
+cd DB-GPT-X/docker
 ```
 最后执行README.md的命令即可；
 
 注意：如果你需要自定义数据库表结构和表数据，只需要更改根目录下/docker/sql/init.sql 文件即可。
 
-### Web & CLi
+### Web & CLI
 首先将用conda创建新环境并将环境切换到db-gpt，命令如下：
 ```shell
 conda create --name db-gpt python=3.9
@@ -70,11 +70,11 @@ pip install -r requirements.txt
 
 
 #### web demo
-我们提供了一种基于 [Gradio]（ https://gradio.app ）网络版演示和命令行演示如下：
+我们提供了一种基于 [Gradio](https://gradio.app) 网络版演示和命令行演示如下：
 
 ![web-demo](img/web.jpg)
 
-然后在存储库中运行[web_demo.py]：
+然后在存储库中运行 [web_demo.py](web_demo.py)：
 
 ```shell
 python web_demo.py
@@ -87,7 +87,7 @@ python web_demo.py
 
 ![cli-demo](img/cli_02.jpg)
 
-在存储库中运行[cli_demo.py]（cli_demo.py）：
+在存储库中运行 [cli_demo.py](cli_demo.py)：
 
 ```shell
 python cli_demo.py
@@ -97,7 +97,7 @@ python cli_demo.py
 
 ### API Deploy
 
-Run [api.py](api.py)： in the repository:
+Run [api.py](api.py) in the repository:
 
 ```shell
 python api.py
