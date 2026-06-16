@@ -1,62 +1,88 @@
-# DB-GPT-X: Using natural language to manage databases, replacing traditional enterprise web management backend interfaces
+# DB-GPT-X
 
-<p align="center">   <img src="./img/logo.jpg" width="75%" /> </p>
+> Talk to your database in natural language — replace your enterprise web admin console.
+
+<p align="center">
+  <img src="./img/logo.jpg" width="75%" />
+</p>
 
 <div align="center">
-  <p>
-    <a href="https://github.com/sql-agi/DB-GPT-X">
-        <img alt="stars" src="https://img.shields.io/github/stars/sql-agi/DB-GPT-X" />
-    </a>
-    <a href="https://github.com/sql-agi/DB-GPT-X">
-        <img alt="forks" src="https://img.shields.io/github/forks/sql-agi/DB-GPT-X" />
-    </a>
-    <a href="https://opensource.org/licenses/MIT">
-      <img alt="License: MIT" src="https://img.shields.io/github/license/sql-agi/DB-GPT-X" />
-    </a>
-     <a href="https://github.com/sql-agi/DB-GPT-X/releases">
-      <img alt="Release Notes" src="https://img.shields.io/github/v/release/sql-agi/DB-GPT-X" />
-    </a>
-    <a href="https://github.com/sql-agi/DB-GPT-X/issues">
-      <img alt="Open Issues" src="https://img.shields.io/github/issues-raw/sql-agi/DB-GPT-X" />
-    </a>
-  </p>
- 👋 Join our <a href="img/WECHAT.md" target="_blank">WeChat</a>
+  <a href="https://github.com/sql-agi/DB-GPT-X">
+    <img alt="stars" src="https://img.shields.io/github/stars/sql-agi/DB-GPT-X" />
+  </a>
+  <a href="https://github.com/sql-agi/DB-GPT-X">
+    <img alt="forks" src="https://img.shields.io/github/forks/sql-agi/DB-GPT-X" />
+  </a>
+  <a href="https://opensource.org/licenses/MIT">
+    <img alt="License: MIT" src="https://img.shields.io/github/license/sql-agi/DB-GPT-X" />
+  </a>
+  <a href="https://github.com/sql-agi/DB-GPT-X/releases">
+    <img alt="Release Notes" src="https://img.shields.io/github/v/release/sql-agi/DB-GPT-X" />
+  </a>
+  <a href="https://github.com/sql-agi/DB-GPT-X/issues">
+    <img alt="Open Issues" src="https://img.shields.io/github/issues-raw/sql-agi/DB-GPT-X" />
+  </a>
+  <br/>
+  👋 Join our <a href="img/WECHAT.md" target="_blank">WeChat</a>
 </div>
 
+---
 
-## Statement
-This project is fully independently developed by the sql-agi team. It has no code copying, forking or derivative connection with eosphoros-ai/DB-GPT. All underlying architectures and core logic are self-developed from scratch.
+## Project Statement
+
+DB-GPT-X is an independently developed open-source project maintained by the sql-agi team.
+
+This project is not affiliated with, endorsed by, derived from, or technically associated with eosphoros-ai/DB-GPT.
+
+All source code, architecture design, and core implementations of DB-GPT-X are independently developed and maintained by the sql-agi team.
+
+---
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Quick Start](#quick-start)
+  - [Docker Deploy](#docker-deploy)
+  - [Web & CLI](#web--cli)
+  - [API Deploy](#api-deploy)
+- [Future Plans](#future-plans)
+- [Contact Us](#contact-us)
+
+---
 
 ## Introduction
 
-🤖  DB-GPT-X is an open-source data application development framework aimed at utilizing Large Language Model (LLM) technology to interact with databases through natural language, replacing traditional web management backend. 
+🤖 DB-GPT-X is an open-source data application development framework that uses Large Language Model (LLM) technology to interact with databases through natural language, replacing traditional web management backends.
 
-🌐  At present, we only have access to query permissions. In order to meet more complex business requirements, including the Create, Read, Update, and Delete (CRUD) functionality, we are currently undergoing internal testing and we look forward to bringing more surprises to everyone in the future.
+🌐 Currently we provide query access only. Support for full CRUD operations (Create, Read, Update, Delete) is under internal testing and will be released soon.
 
-🚀  In the era of Data 3.0, our products are committed to utilizing model and database technologies to enable enterprises and developers to build custom applications with less code. Enable developers to focus more on complex C-end business and replace traditional web management backend systems.
+🚀 In the Data 3.0 era, DB-GPT-X enables enterprises and developers to build custom applications with less code — letting developers focus on complex business logic instead of managing admin consoles.
+
+---
 
 ## Quick Start
-Find a directory where the project is stored and clone it. The cloning command is as follows:
+
 ```shell
 git clone https://github.com/sql-agi/DB-GPT-X
 ```
-### Docker deploy
-Firstly, configure the .env file, which can refer to templates .env_temple;
 
-You only need to configure the OPENAI_API_KEY and OPENAI_API_BASE attributes (it is recommended to use the official API_KEY);
+### Docker Deploy
 
-Then switch to the Docker directory and refer to README.md in the Docker directory. The switching command is as follows:
+1. Configure the `.env` file (reference: `templates.env_temple`)
+2. Set `OPENAI_API_KEY` and `OPENAI_API_BASE` (official API key recommended)
+3. Switch to the docker directory:
 
 ```shell
 cd DB-GPT-X/docker
 ```
-Finally, execute the command README.md;
 
-Note: If you need to customize the database table structure and table data, simply change the /docker/sql/init.sql file in the root directory
+4. Follow the instructions in `docker/README.md`
+
+> **Note:** To customize the database schema or seed data, edit `/docker/sql/init.sql`.
 
 ### Web & CLI
 
-Firstly, create a new environment using Conda and switch the environment to db-gpt. The command is as follows:
+**Prerequisites:** Python 3.9, Conda
 
 ```shell
 conda create --name db-gpt python=3.9
@@ -64,81 +90,98 @@ conda activate db-gpt
 pip install -r requirements.txt
 ```
 
-Configure the .env file, you can refer to templates .env_temple
+Configure `.env` (reference: `templates.env_temple`):
 
-The main configuration includes these attributes: OPENAI_API_KEY、OPENAI_API_BASE、MYSQL_HOST、MYSQL_PORT、MYSQL_USER、MYSQL_PASSWORD、MYSQL_DATABASE
+| Variable | Required |
+|---|---|
+| `OPENAI_API_KEY` | ✅ |
+| `OPENAI_API_BASE` | ✅ |
+| `MYSQL_HOST` | ✅ |
+| `MYSQL_PORT` | ✅ |
+| `MYSQL_USER` | ✅ |
+| `MYSQL_PASSWORD` | ✅ |
+| `MYSQL_DATABASE` | ✅ |
 
-🔥🔥🔥 I strongly recommend that everyone use the official API_KEY. After testing, some intermediate keys do not support good results
+> 🔥 We strongly recommend using the official OpenAI API key. Third-party relay keys may produce degraded results.
 
-#### web demo
-
-We provide a method based on [Gradio](https://gradio.app) web version demo and a command-line demo:
+#### Web Demo
 
 ![web-demo](img/web.jpg)
-
-Then run [web_demo.py](web_demo.py) in the repository:
 
 ```shell
 python web_demo.py
 ```
 
-The program will run a web server and output the address. Open the output address in the browser to use it. The latest version of the demo has achieved a typewriter effect, greatly improving the speed experience. Note that due to slow network access in domestic Gradio, when 'demo. queue(). launch (share=True, inbrowser=True)' is enabled, all networks will be forwarded through the Gradio server, resulting in a significant decrease in the typewriter experience. The default startup method has now been changed to 'share=False'. If there is a need for public network access, it can be changed to 'share=True' startup.
+The program starts a local web server. Open the printed URL in your browser. The latest version features a typewriter effect for improved UX.
 
-#### cli demo
+> By default `share=False`. Set `share=True` in [web_demo.py](web_demo.py) for public access via Gradio's relay server (note: this may reduce typewriter performance).
+
+#### CLI Demo
+
 ![cli-demo](img/cli_01.jpg)
 
 ![cli-demo](img/cli_02.jpg)
-
-Run [cli_demo.py](cli_demo.py) in the repository:
 
 ```shell
 python cli_demo.py
 ```
 
-The program will have an interactive conversation on the command line. Enter instructions and press enter on the command line to generate a reply, and enter 'quit' to terminate the program.
+Interactive conversation in the terminal. Type `quit` to exit.
 
 ### API Deploy
-
-Run [api.py](api.py) in the repository:
 
 ```shell
 python api.py
 ```
-Deployed locally on port 8000 by default, called through POST method
+
+Starts a local server on port `8000`. Call via POST:
 
 ```shell
 curl -X POST "http://127.0.0.1:8000/chat/db" \
      -H "Content-Type: application/json" \
-     -d '{"input": "你好"}'
+     -d '{"input": "hello"}'
 ```
-The obtained return value is
 
-```shell
+Response:
+
+```json
 {
-    "reply": "你好！请问有什么可以帮助您的？"
+    "reply": "Hello! How can I help you?"
 }
 ```
 
+---
+
 ## Future Plans
-🔥🔥🔥 Front end UI interface: We are committed to developing better front-end UI interfaces, further supporting a wider range of databases and LLMs (including open-source big models), to enhance user experience and system flexibility.
 
-🔥🔥🔥 Backend: We will further conduct in-depth testing on more complex CRUD scenarios, adding functions such as distinguishing (switching) environments and setting role permissions to ensure the accuracy and stability of LLM operations.
+- **Frontend:** Richer UI, support for more database types and open-source LLMs
+- **Backend:** Deep testing of complex CRUD scenarios, environment switching, role-based permissions
+- **Community:** More user feedback integration; contributors welcome
 
-🔥🔥🔥 Summary: We hope to provide more user experience and feedback, and we will further optimize our products based on user feedback. We also hope that interested partners can join our open source team.
+---
 
 ## Contact Us
 
-### Project communication group
+### WeChat Group
 
-<img src="img/qr_code_wechat.jpg" alt="二维码" width="300" />
+<img src="img/qr_code_wechat.jpg" alt="WeChat QR Code" width="300" />
 
-🎉 Chat_DB Project WeChat communication group. If you are also interested in this project, please join the group chat to participate in discussions and exchanges.
+Join the DB-GPT-X WeChat community to discuss and share feedback.
 
 ### Official Account
 
-<img src="img/qr_code_account.jpg" alt="二维码" width="300" />
+<img src="img/qr_code_account.jpg" alt="Official Account QR Code" width="300" />
 
-🎉 Chat_DB official account, welcome to scan the code.
+Follow our official WeChat account for updates.
 
-## 🤗 Reference project
-https://github.com/langchain-ai/langchain
+---
+
+## Reference Projects
+
+- [LangChain](https://github.com/langchain-ai/langchain)
+
+---
+
+## Project Statement
+
+DB-GPT-X is an independently developed open-source project maintained by the sql-agi team. This project is not affiliated with, endorsed by, derived from, or technically associated with eosphoros-ai/DB-GPT.

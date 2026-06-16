@@ -1,144 +1,187 @@
-# DB-GPT-X:通过自然语言管理数据库，替代传统企业的web管理后台界面
+# DB-GPT-X
+
+> 用自然语言管理数据库——替代传统企业 Web 管理后台。
 
 <p align="center">
   <img src="./img/logo.jpg" width="75%" />
-</p> 
-
-
-
+</p>
 
 <div align="center">
-  <p>
-    <a href="https://github.com/sql-agi/DB-GPT-X">
-        <img alt="stars" src="https://img.shields.io/github/stars/sql-agi/DB-GPT-X" />
-    </a>
-    <a href="https://github.com/sql-agi/DB-GPT-X">
-        <img alt="forks" src="https://img.shields.io/github/forks/sql-agi/DB-GPT-X" />
-    </a>
-    <a href="https://opensource.org/licenses/MIT">
-      <img alt="License: MIT" src="https://img.shields.io/github/license/sql-agi/DB-GPT-X" />
-    </a>
-     <a href="https://github.com/sql-agi/DB-GPT-X/releases">
-      <img alt="Release Notes" src="https://img.shields.io/github/v/release/sql-agi/DB-GPT-X" />
-    </a>
-    <a href="https://github.com/sql-agi/DB-GPT-X/issues">
-      <img alt="Open Issues" src="https://img.shields.io/github/issues-raw/sql-agi/DB-GPT-X" />
-    </a>
-  </p>
- 👋 加入我们的 <a href="img/WECHAT.md" target="_blank">WeChat</a>
+  <a href="https://github.com/sql-agi/DB-GPT-X">
+    <img alt="stars" src="https://img.shields.io/github/stars/sql-agi/DB-GPT-X" />
+  </a>
+  <a href="https://github.com/sql-agi/DB-GPT-X">
+    <img alt="forks" src="https://img.shields.io/github/forks/sql-agi/DB-GPT-X" />
+  </a>
+  <a href="https://opensource.org/licenses/MIT">
+    <img alt="License: MIT" src="https://img.shields.io/github/license/sql-agi/DB-GPT-X" />
+  </a>
+  <a href="https://github.com/sql-agi/DB-GPT-X/releases">
+    <img alt="Release Notes" src="https://img.shields.io/github/v/release/sql-agi/DB-GPT-X" />
+  </a>
+  <a href="https://github.com/sql-agi/DB-GPT-X/issues">
+    <img alt="Open Issues" src="https://img.shields.io/github/issues-raw/sql-agi/DB-GPT-X" />
+  </a>
+  <br/>
+  👋 加入我们的 <a href="img/WECHAT.md" target="_blank">微信群</a>
 </div>
 
-## Introduction
-🤖  DB-GPT-X是一个开源的数据应用程序开发框架，旨在利用大型语言模型（LLM）技术通过自然语言与数据库进行交互，取代了传统的web管理后端。
+---
 
-🌐  目前我们只开放了查询权限，为了满足更复杂的业务需求，包括创建、读取、更新和删除（CRUD）功能，我们目前正在进行内部测试，并期待着在未来能给大家带来更多的惊喜。
+## 项目声明
 
-🚀  在Data 3.0时代，我们的产品致力于利用模型和数据库技术，使企业和开发人员能够用更少的代码构建自定义应用程序。让开发人员更专注于复杂的C端业务从而取代传统的web管理后台系统。
+DB-GPT-X 是由 sql-agi 团队独立开发和维护的开源项目。
 
-## 声明
-本项目由 sql-agi 团队完全独立开发。与 eosphoros-ai/DB-GPT 没有任何代码复制、fork 或衍生关系。所有底层架构和核心逻辑均从零自主研发。
+本项目与 eosphoros-ai/DB-GPT 无任何关联、背书、衍生或技术继承关系。
+
+DB-GPT-X 的所有源代码、架构设计和核心实现均由 sql-agi 团队独立自主研发。
+
+---
+
+## 目录
+
+- [项目介绍](#项目介绍)
+- [快速上手](#快速上手)
+  - [Docker 部署](#docker-deploy)
+  - [Web & CLI](#web--cli)
+  - [API 部署](#api-deploy)
+- [未来计划](#未来计划)
+- [联系我们](#联系我们)
+
+---
+
+## 项目介绍
+
+🤖 DB-GPT-X 是一个开源的数据应用程序开发框架，旨在利用大型语言模型（LLM）技术通过自然语言与数据库进行交互，取代传统的 Web 管理后台。
+
+🌐 目前开放查询权限。完整的增删改查（CRUD）功能正在内部测试中，即将推出。
+
+🚀 在 Data 3.0 时代，DB-GPT-X 让企业和开发者用更少的代码构建自定义应用，专注于复杂的业务逻辑，而非维护管理后台。
+
+---
 
 ## 快速上手
-找一个项目存储的目录，将项目克隆下来，克隆命令如下：
+
 ```shell
 git clone https://github.com/sql-agi/DB-GPT-X
 ```
-### Docker deploy
-首先，配置.env文件，可以参考 templates.env_temple；
 
-只需要配置OPENAI_API_KEY、OPENAI_API_BASE这两个属性即可（建议使用官方的API_KEY）；
+### Docker Deploy
 
-然后切换到docker目录下，参考docker目录下的README.md，切换命令如下：
+1. 配置 `.env` 文件（参考 `templates.env_temple`）
+2. 填写 `OPENAI_API_KEY` 和 `OPENAI_API_BASE`（建议使用官方 API Key）
+3. 切换到 docker 目录：
 
 ```shell
 cd DB-GPT-X/docker
 ```
-最后执行README.md的命令即可；
 
-注意：如果你需要自定义数据库表结构和表数据，只需要更改根目录下/docker/sql/init.sql 文件即可。
+4. 参照 `docker/README.md` 执行对应命令
+
+> **注意：** 如需自定义数据库表结构或初始数据，修改 `/docker/sql/init.sql` 即可。
 
 ### Web & CLI
-首先将用conda创建新环境并将环境切换到db-gpt，命令如下：
+
+**环境要求：** Python 3.9、Conda
+
 ```shell
 conda create --name db-gpt python=3.9
 conda activate db-gpt
 pip install -r requirements.txt
 ```
 
-配置.env文件，可以参考 templates.env_temple
+配置 `.env` 文件（参考 `templates.env_temple`）：
 
-主要配置包括这几个属性：OPENAI_API_KEY、OPENAI_API_BASE、MYSQL_HOST、MYSQL_PORT、MYSQL_USER、MYSQL_PASSWORD、MYSQL_DATABASE
+| 变量 | 是否必填 |
+|---|---|
+| `OPENAI_API_KEY` | ✅ |
+| `OPENAI_API_BASE` | ✅ |
+| `MYSQL_HOST` | ✅ |
+| `MYSQL_PORT` | ✅ |
+| `MYSQL_USER` | ✅ |
+| `MYSQL_PASSWORD` | ✅ |
+| `MYSQL_DATABASE` | ✅ |
 
-🔥🔥🔥强烈建议大家用官方的API_KEY 经过测试有些中转的key支持的效果并不好
+> 🔥 强烈建议使用官方 OpenAI API Key，经测试部分中转 Key 效果不稳定。
 
-
-#### web demo
-我们提供了一种基于 [Gradio](https://gradio.app) 网络版演示和命令行演示如下：
+#### Web Demo
 
 ![web-demo](img/web.jpg)
-
-然后在存储库中运行 [web_demo.py](web_demo.py)：
 
 ```shell
 python web_demo.py
 ```
 
-程序会运行一个 Web Server，并输出地址。在浏览器中打开输出的地址即可使用。最新版 Demo 实现了打字机效果，速度体验大大提升。注意，由于国内 Gradio 的网络访问较为缓慢，启用 demo.queue().launch(share=True, inbrowser=True) 时所有网络会经过 Gradio 服务器转发，导致打字机体验大幅下降，现在默认启动方式已经改为 share=False，如有需要公网访问的需求，可以重新修改为 share=True 启动。
+程序启动后输出本地地址，在浏览器中打开即可使用。最新版已实现打字机效果，体验大幅提升。
 
-#### cli demo
+> 默认 `share=False`。如需公网访问，在 [web_demo.py](web_demo.py) 中改为 `share=True`（注意：通过 Gradio 中转会降低打字机响应速度）。
+
+#### CLI Demo
+
 ![cli-demo](img/cli_01.jpg)
 
 ![cli-demo](img/cli_02.jpg)
-
-在存储库中运行 [cli_demo.py](cli_demo.py)：
 
 ```shell
 python cli_demo.py
 ```
 
-该程序将在命令行上进行交互式对话。输入指令并按命令行上的Enter键生成回复，然后输入“quit”终止程序。
+在命令行中进行交互式对话，输入 `quit` 退出。
 
 ### API Deploy
-
-Run [api.py](api.py) in the repository:
 
 ```shell
 python api.py
 ```
-默认情况下在端口8000上本地部署，通过POST方法调用
+
+默认在本地 `8000` 端口启动，通过 POST 方法调用：
 
 ```shell
 curl -X POST "http://127.0.0.1:8000/chat/db" \
      -H "Content-Type: application/json" \
      -d '{"input": "你好"}'
 ```
-得到的返回值为
 
-```shell
+返回值：
+
+```json
 {
     "reply": "你好！请问有什么可以帮助您的？"
 }
 ```
 
+---
+
 ## 未来计划
-🔥🔥🔥 前端：我们致力于开发更优秀的前端UI界面，进一步支持更多类型的数据库以及LLM（其中包含开源大模型），以提升用户体验和系统灵活性。
 
-🔥🔥🔥 后端：我们将进一步深度测试更复杂的CRUD场景，增加区分（切换）环境、设置角色权限等功能从而保证LLM操作的准确性和稳定性。
+- **前端：** 更优秀的 UI 界面，支持更多数据库类型及开源大模型
+- **后端：** 深度测试复杂 CRUD 场景，增加环境切换、角色权限管理
+- **社区：** 持续根据用户反馈优化产品，欢迎感兴趣的开发者加入开源团队
 
-🔥🔥🔥 总结：希望更多的用户体验并提供反馈，我们会根据用户的反馈进一步优化我们的产品，并希望感兴趣的小伙伴加入我们的开源团队。
+---
 
 ## 联系我们
 
 ### 项目交流群
-<img src="img/qr_code_wechat.jpg" alt="二维码" width="300" />
 
-🎉 Chat_DB 项目微信交流群，如果你也对本项目感兴趣，欢迎加入群聊参与讨论交流。
+<img src="img/qr_code_wechat.jpg" alt="微信群二维码" width="300" />
+
+欢迎加入 DB-GPT-X 微信交流群，参与讨论与反馈。
 
 ### 公众号
 
-<img src="img/qr_code_account.jpg" alt="二维码" width="300" />
+<img src="img/qr_code_account.jpg" alt="公众号二维码" width="300" />
 
-🎉 Chat_DB 项目官方公众号，欢迎扫码关注。
+欢迎扫码关注官方公众号，获取最新动态。
 
-## 🤗 Reference project
-https://github.com/langchain-ai/langchain
+---
+
+## 参考项目
+
+- [LangChain](https://github.com/langchain-ai/langchain)
+
+---
+
+## 项目声明
+
+DB-GPT-X 是由 sql-agi 团队独立开发的开源项目，与 eosphoros-ai/DB-GPT 无任何关联、背书或衍生关系。
