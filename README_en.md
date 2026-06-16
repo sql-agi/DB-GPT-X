@@ -28,16 +28,6 @@
 
 ---
 
-## Project Statement
-
-DB-GPT-X is an independently developed open-source project maintained by the sql-agi team.
-
-This project is not affiliated with, endorsed by, derived from, or technically associated with eosphoros-ai/DB-GPT.
-
-All source code, architecture design, and core implementations of DB-GPT-X are independently developed and maintained by the sql-agi team.
-
----
-
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -184,4 +174,8 @@ Follow our official WeChat account for updates.
 
 ## Project Statement
 
-DB-GPT-X is an independently developed open-source project maintained by the sql-agi team. This project is not affiliated with, endorsed by, derived from, or technically associated with eosphoros-ai/DB-GPT.
+DB-GPT-X is an independently developed open-source project maintained by the sql-agi team.
+
+This project has no affiliation, authorization, endorsement, or cooperative relationship with eosphoros-ai/DB-GPT.
+
+The source code, architecture design, and core implementations of DB-GPT-X are independently developed and maintained by the sql-agi team.

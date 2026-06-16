@@ -28,16 +28,6 @@
 
 ---
 
-## 项目声明
-
-DB-GPT-X 是由 sql-agi 团队独立开发和维护的开源项目。
-
-本项目与 eosphoros-ai/DB-GPT 无任何关联、背书、衍生或技术继承关系。
-
-DB-GPT-X 的所有源代码、架构设计和核心实现均由 sql-agi 团队独立自主研发。
-
----
-
 ## 目录
 
 - [项目介绍](#项目介绍)
@@ -184,4 +174,8 @@ curl -X POST "http://127.0.0.1:8000/chat/db" \
 
 ## 项目声明
 
-DB-GPT-X 是由 sql-agi 团队独立开发的开源项目，与 eosphoros-ai/DB-GPT 无任何关联、背书或衍生关系。
+DB-GPT-X 是由 sql-agi 团队独立开发和维护的开源项目。
+
+本项目与 eosphoros-ai/DB-GPT 不存在任何关联、授权、背书或合作关系。
+
+DB-GPT-X 的源代码、架构设计及核心实现均由 sql-agi 团队独立研发和维护。
